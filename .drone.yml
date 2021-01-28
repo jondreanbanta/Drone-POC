@@ -1,0 +1,18 @@
+##use microsoft/dotnet:sdk image for .net framework
+###use mcr.microsoft.com/dotnet/core/sdk:3.0 for .net core image
+kind: pipeline
+type: docker
+name: Pull Request Checker
+
+steps:
+- name: Unit Test (Test Automation Framework)
+  image: jaydeh/seleniumdotnetcore3.1:latest #mcr.microsoft.com/dotnet/core/sdk:3.1.102
+  commands:
+  - cat README.md
+  trigger:
+  branch:
+    include:
+      - main
+  event:
+    include:
+      - push
