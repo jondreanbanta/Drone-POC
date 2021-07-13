@@ -30,3 +30,16 @@ steps:
 trigger:
   ref:
   - refs/tags/db.*
+---
+name: Test Pipeline 2
+
+steps:
+- name: Test
+  image: mcr.microsoft.com/dotnet/core/sdk:3.1.102
+  commands:
+  - echo "this is the 2nd pipeline"
+  trigger:
+    branch:
+      - dev
+    event:
+      - push
