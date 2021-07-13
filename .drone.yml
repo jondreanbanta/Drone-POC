@@ -2,13 +2,13 @@
 ###use mcr.microsoft.com/dotnet/core/sdk:3.0 for .net core image
 kind: pipeline
 type: docker
-name: Pull Request Checker
+name: Test Pipeline
 
 steps:
-- name: Unit Test (Test Automation Framework)
+- name: Test
   image: jaydeh/seleniumdotnetcore3.1:latest #mcr.microsoft.com/dotnet/core/sdk:3.1.102
   commands:
-  - cat README.md
+  - Write-Host "hello world"
   trigger:
   ref:
       - refs/tags/test.db.*
@@ -25,7 +25,7 @@ steps:
 - name: Test DB
   image: mcr.microsoft.com/dotnet/core/sdk:3.1.102
   commands:
-  - cat "i will show only on db tags"
+  - echo "i will show only on db tags"
   
 trigger:
   ref:
