@@ -14,3 +14,19 @@ steps:
       - refs/heads/test.db.*
   event:
       - push
+---
+kind: pipeline
+type: docker
+name: Conditional DB Tag
+
+steps:
+- name: Test DB
+  image: mcr.microsoft.com/dotnet/core/sdk:3.1.102
+  commands:
+  - cat "i will show only on db tags"
+  
+trigger:
+  event:
+  - push
+  ref:
+  - refs/heads/db.*
