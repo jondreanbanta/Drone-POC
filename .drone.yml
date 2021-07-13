@@ -2,7 +2,7 @@
 ###use mcr.microsoft.com/dotnet/core/sdk:3.0 for .net core image
 kind: pipeline
 type: docker
-name: Test Pipeline
+name: Test Pipeline 1
 
 steps:
 - name: Test
