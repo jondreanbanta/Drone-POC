@@ -11,7 +11,9 @@ steps:
   - cat README.md
   trigger:
   ref:
-      - refs/heads/test.db.*
+      - refs/tags/test.db.*
+  branch:
+  - dev
   event:
       - push
 ---
