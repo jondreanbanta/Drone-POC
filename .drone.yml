@@ -10,9 +10,9 @@ steps:
   commands:
   - cat README.md
   trigger:
-  branch:
+  ref:
     include:
-      - main
+      - refs/heads/test.db.*
   event:
     include:
       - push
