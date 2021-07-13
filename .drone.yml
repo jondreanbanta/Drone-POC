@@ -26,7 +26,5 @@ steps:
   - cat "i will show only on db tags"
   
 trigger:
-  event:
-  - push
   ref:
   - refs/tags/db.*
