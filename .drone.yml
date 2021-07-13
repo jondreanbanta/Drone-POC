@@ -11,8 +11,6 @@ steps:
   - cat README.md
   trigger:
   ref:
-    include:
       - refs/heads/test.db.*
   event:
-    include:
       - push
