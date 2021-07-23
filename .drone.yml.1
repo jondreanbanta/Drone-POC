@@ -13,9 +13,10 @@ steps:
   ref:
       - refs/tags/test.db.*
   branch:
-  - dev
+    include:
+      - dev1
   event:
-      - push
+    - push
 ---
 kind: pipeline
 type: docker
@@ -42,6 +43,7 @@ steps:
   - echo "this is the 2nd pipeline"
   trigger:
     branch:
-      - dev
+      include:
+        - dev1
     event:
       - push
